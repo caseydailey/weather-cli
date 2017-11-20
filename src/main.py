@@ -1,12 +1,13 @@
 import os
-import api
-import zips
-import views
 import controller
+
+"""
+    This module provides a relay between the user and the controller
+"""
 
 def main():
 
-    clear()
+    os.system('clear')
     print(views.main_menu())
 
     choice = input(">> ")
@@ -19,11 +20,10 @@ def main():
 
     if choice =='3':
         quit()
-        
+
     main()
 
-def clear():
-    os.system('clear')
+
 
 if __name__ == '__main__':
     main()

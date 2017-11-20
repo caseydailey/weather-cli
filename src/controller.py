@@ -5,6 +5,10 @@ import views
 import main
 
 
+"""
+    This module flips the switches between the menu and the other helper modules
+"""
+
 def generate_report():
 
     zip_code = get_zip()
