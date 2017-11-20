@@ -20,10 +20,16 @@ def get_weather(zip_code):
     conditions['city_name'] = report['name']
     conditions['description'] = report['weather'][0]['description']
     conditions['temp'] = kelvin_to_fahrenheit(report['main']['temp'])
-    condition['wind'] = report['wind']['speed']
+    conditions['wind'] = report['wind']['speed']
+    conditions['needs_jacket'] = is_cold(kelvin_to_fahrenheit(report['main']['temp']))
+    conditions['needs_umbrella'] = True if 'rain' in report else False
+    conditions['needs_shades'] = True if report['weather'][0]['description'] == 'sunny' else False
 
     return conditions
-    
+        
+
+def is_cold(temp): 
+    return True if temp < 60 else False
 
 def kelvin_to_fahrenheit(kelvin_temp):
     """
@@ -35,6 +41,3 @@ def kelvin_to_fahrenheit(kelvin_temp):
     fahrenheit_temp = int(1.8 * ( kelvin_temp - 273) + 32)
     return fahrenheit_temp
 
-
-if __name__ == '__main__':
-    get_weather(37211)
