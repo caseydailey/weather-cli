@@ -15,11 +15,10 @@ def main_menu():
 def weather_report(weather_dict):
     os.system('clear')
     return """
-
             *****************************
                 Your Report is In!!!
             *****************************
-            
+                      
             The weather in {} is {} 
             with a temperature of {} and winds of {} mph.
 

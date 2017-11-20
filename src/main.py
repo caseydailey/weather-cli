@@ -11,16 +11,16 @@ def main():
 
     choice = input(">> ")
 
-    while choice != '3':
+    if choice == '1':
+        controller.generate_report()
 
-        if choice == '1':
-            controller.generate_report()
+    if choice == '2':
+        controller.generate_help_menu()
 
-        elif choice == '2':
-            controller.generate_help_menu()
-
-        else:
-            controller.say_bye()
+    if choice =='3':
+        quit()
+        
+    main()
 
 def clear():
     os.system('clear')

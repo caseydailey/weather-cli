@@ -2,6 +2,7 @@ import os
 import api
 import zips
 import views
+import main
 
 
 def generate_report():
@@ -12,8 +13,14 @@ def generate_report():
     if zip_code in zip_list:
         weather_dict = api.get_weather(zip_code) 
         print(views.weather_report(weather_dict))
+        next_move = input("press enter to return the main menu > ")
+        print(next_move)
+        if next_move:
+            return            
     else:
-        next_move = input("Sorry. we don't recognize that Zip. Please Try again >> ")
+        print("Sorry. we don't recognize that Zip.")
+        generate_report()
+
 
 
 
@@ -22,4 +29,5 @@ def get_zip():
     return int(zip_code)
 
 
-def generate_help_menu()
+# def generate_help_menu():
+#     print(views.help())
