@@ -13,8 +13,27 @@ def get_weather(zip_code):
     """
     params = {'zip': zip_code, 'APPID': key}
     weather = requests.get(url, params)    
-    print(weather.text)
+    report = weather.json()
 
+    conditions = {}
+
+    conditions['city_name'] = report['name']
+    conditions['description'] = report['weather'][0]['description']
+    conditions['temp'] = kelvin_to_fahrenheit(report['main']['temp'])
+    condition['wind'] = report['wind']['speed']
+
+    return conditions
+    
+
+def kelvin_to_fahrenheit(kelvin_temp):
+    """
+    helper to convert kelvin_temp to fahrenheit_temp
+
+    args: kelvin_temp int
+    returns: fahrenheit_temp int
+    """
+    fahrenheit_temp = int(1.8 * ( kelvin_temp - 273) + 32)
+    return fahrenheit_temp
 
 
 if __name__ == '__main__':
