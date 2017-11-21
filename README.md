@@ -34,6 +34,6 @@ python main.py
 # Issues
 
 
-Bugs? We got a few. [Go here] to tell me about them if you'd like
+Bugs? We got a few. [Go here](https://github.com/caseydailey/weather-cli/issues) to tell me about them if you'd like
 
 
