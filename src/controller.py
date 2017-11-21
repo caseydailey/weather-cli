@@ -18,7 +18,6 @@ def generate_report():
         weather_dict = api.get_weather(zip_code) 
         print(views.weather_report(weather_dict))
         next_move = input("press enter to return the main menu > ")
-        print(next_move)
         if next_move:
             return            
     else:
@@ -33,5 +32,3 @@ def get_zip():
     return int(zip_code)
 
 
-# def generate_help_menu():
-#     print(views.help())

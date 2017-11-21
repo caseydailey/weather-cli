@@ -28,8 +28,16 @@ def get_weather(zip_code):
     return conditions
         
 
-def is_cold(temp): 
+def is_cold(temp):
+    """
+    checks if its cold
+    
+    args: args int
+    returns: bool
+    
+    """ 
     return True if temp < 60 else False
+
 
 def kelvin_to_fahrenheit(kelvin_temp):
     """
