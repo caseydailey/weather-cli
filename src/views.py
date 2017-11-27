@@ -1,19 +1,5 @@
-import os
-
-def main_menu():
-    return """
-            *****************************
-                Welcome to Weather-CLI
-            *****************************
-
-            1. Get Weather
-            2. Help
-            3. Quit
-
-            """
 
 def weather_report(weather_dict):
-    os.system('clear')
     return """
             *****************************
                 Your Report is In!!!
@@ -28,7 +14,7 @@ def weather_report(weather_dict):
             Umbrella? {}
             Shades? {}
 
-            """.format( weather_dict['city_name'], 
+            """.format( weather_dict['city_name'],
                         weather_dict['description'],
                         weather_dict['temp'],
                         weather_dict['wind'],
